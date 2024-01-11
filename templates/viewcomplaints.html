@@ -1,0 +1,24 @@
+{%include 'admin_header.html'%}
+    <center>
+        <h2>complaints</h2>
+        <table>
+            <tr>
+                <th>complaints</th>
+                <th>date</th>
+                <th>reply</th>
+            </tr>
+            {% for i in g %}
+            <tr>
+                <td>{{i.complaint}}</td>
+                <td>{{i.date_time}}</td>
+                <td>{{i.reply}}</td>
+                
+                <td><a href="replycomplaint/{{i.id}}"><input type="button" value="reply" name="submit"></a></td>
+                
+            </tr>
+            {%endfor%}
+        </table>
+    </center>
+    
+</body>
+</html>

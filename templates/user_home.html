@@ -1,0 +1,138 @@
+{%include 'userheader.html'%}
+
+
+    <form method="post">
+        <label for="product_name">Enter Product Name:</label>
+        <input type="text" id="product_name" name="product_name" required>
+        <button type="submit">Search</button>
+    </form> 
+
+ <div class="tab">
+    
+{%for i in view %}
+{% comment %} <table> 
+    <tr>
+        <td><img src="static/{{i.image}}" width="118px" height="190px" alt="image"></td>
+    </tr>
+    <tr>
+        <td><b>{{i.product_name}}</b></td>
+        </tr>
+        <tr>
+        <td>{{i.details}}</td>
+        </tr>
+        <tr>
+        <td>{{i.price}}</td>
+    </tr>
+   
+    <tr>
+        <td><a href="add_to_cart/{{i.id}}/{{i.price}}/{{i.shop_registrations_id}}"><input class="button2" type="submit" name="submit" value="buy now"></a></td>
+   
+    </tr>   
+</table> {% endcomment %}
+
+ <div class="service-top"> 
+   
+  <div class="service-down">
+    <div class="service-bottom">
+        <div class="card">
+            <img src="static/{{i.image}}" width="118px" height="190px" class="s-img" alt="" >
+            <p class:"pg"><b>{{i.product_name}}</b></p>
+            <p class:"pg">{{i.details}}</p>
+            <p class="pg">{{i.price}}</p>
+            
+                <td> <a href="add_to_cart/{{i.id}}/{{i.price}}/{{i.shop_registrations_id}}"><input class="button2" type="submit" name="submit" value="buy"></td>
+          
+        </div>
+    </div>
+ </div>
+</div>
+{%endfor%}
+</div>
+
+ 
+ <style>
+    .tab{
+        display: flex;
+        width:100%;
+        height:100%;
+        
+        }
+    .button2{
+        padding: 7px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 15px;
+        cursor: pointer;
+        background-color: rgb(62, 82, 98);
+        border: none;
+        border-radius: 15px;
+        color: azure;
+        
+    }
+    .card{
+        width: 150px;
+        height: 300px;
+        box-shadow: 0px 2px 20px rgb(138, 138, 138);
+        border: 1px solid lightgray;
+        background-color: azure;
+       
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 40px;
+    
+    }
+    .service-downn{
+        width: 100%;
+        height: 100%;
+       
+        
+        }
+        .service-bottom{
+            width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+       
+       
+        justify-content: center;
+        }
+        .s-img{
+            border-radius: 20px;
+            width:100px;
+            height:100px;
+           
+            
+       
+       }
+
+       .service-top{
+        width:100%;
+        height:100vh;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgrey;
+       
+        display: flex;
+        
+        
+       }
+
+    .pg{
+        margin-top: 10px;
+        font-size: 1px;
+    }
+    a,a:hover{
+        text-decoration: none;
+        color: black;
+        
+    }
+   
+    
+ </style>
+
+
+</body>
+
+</html>

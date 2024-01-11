@@ -1,0 +1,30 @@
+{%include 'admin_header.html'%}
+    <center>
+        <h2>view product</h2>
+    <table class="table">
+        <thead>
+    <tr>
+        <th>product Name</th>
+        <th>details</th>
+        <th>quantity</th>
+        <th>price</th>
+        <th>image</th>
+
+    </tr>
+</thead> 
+    {% for i in f%}
+    <tbody>
+    <tr>
+        <td class="success">{{i.product_name}}</td>
+        <td class="info">{{i.details}}</td>
+        <td class="warning">{{i.stocks}}</td>
+        <td class="active">{{i.price}}</td>
+        <td class="danger"><img src="static/{{i.image}}" width="50px" height="50px"></td>
+    </tr>
+    </tbody>
+    {%endfor%}
+    </table>
+    </center>
+
+</body>
+</html>

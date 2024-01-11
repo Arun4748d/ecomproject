@@ -1,0 +1,60 @@
+{%include 'admin_header.html'%}
+    <form action="" method="post">
+        
+        <center>
+            {%if f%}
+             <table>
+
+                <h3>update category</h3>
+                
+                <tr>
+                    <th>category</th>
+                    <td><input type="text" name="category"  value= "{{f.category_name}}"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="submit" value="submit"></td>
+
+                </tr>
+                
+              </table>
+             {%else%}  
+              <table>
+
+                <h3>manage category</h3>
+                
+                <tr>
+                    <th>category</th>
+                    <td><input type="text" name="category" ></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="submit" value="add category"></td>
+
+                </tr>
+                
+              </table>
+            {%endif%}
+            <br><br><br><br>
+        
+        <table>
+            <h3>category</h3>
+            <tr>
+                <th>p.no</th>
+                <th>category</th>
+              </tr>
+                {%for i in h%}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.category_name}}</td>
+                    <td><a href="update_c/{{i.id}}">update</a></td>
+                    <td><a href="delete_c/{{i.id}}">delete</a></td>
+
+                </tr>
+                {%endfor%}
+            
+        </table>
+        </center>
+    </form>
+    
+    
+</body>
+</html>

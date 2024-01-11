@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <center>
+        <h2>rating</h2>
+    <table>
+       
+            <tr>
+                <th>i</th>
+                <th>product</th>
+                <th>rating</th>
+                <th>review</th>
+            </tr>
+            {%for i in f%}
+            <tr>
+                <td><img src="static/{{i.product.image}}" width="50px" height="50px"></td>
+                <td>{{i.product_id.product_name}}</td>
+                <td>{{i.rate}}</td>
+                <td>{{i.review}}</td>
+            </tr>
+            {%endfor%}
+       
+    </table>
+</center>
+    
+</body>
+</html>

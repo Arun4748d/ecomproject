@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form action="" method="post">
+            
+            <table>
+                <tr>
+                    <th>product name</th>
+                    <th><input type="text" name="proname" value="{{q.product_name}}" readonly></th>
+                </tr>
+                <tr>
+                    <th>amount</th>
+                    <td><input type="text" name="price" value="{{q.price}}"   id="amount" ></td>
+                </tr>
+                <tr>
+                <th>quantity</th>
+                <td><input type="number" name="quantity" value="" oninput="totalfunction()" id="quantity"></td>
+                </tr>
+                <tr>
+                    <th>total</th>
+                    <td><input type="text" name="total" value="" id="total"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="submit" value="submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+    <script>
+        function totalfunction(){
+            var a=document.getElementById("amount").value
+            var b=document.getElementById("quantity").value
+            var c=a*b
+            console.log(c)
+            document.getElementById("total").value=c 
+               }
+    </script>
+    
+</body>
+</html>

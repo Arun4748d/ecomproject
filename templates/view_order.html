@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <table>
+        <tr>
+        <th>i</th>
+        <th>product</th>
+        <th>quantity</th>
+        <th>amount</th>
+        <th>status</th>
+        </tr>
+        {%for i in j%}
+        <tr>
+            <td><img src="static/{{i.product.image}}" width="50px" height="50px"></td>
+            <td>{{i.product.product_name}}</td>
+            <td>{{i.quantity}}</td>
+            <td>{{i.amount}}</td>
+            <td>{{i.order_master.status}}</td>
+            {% if i.order_master.status == "paid" %}
+            <td><a href="accept_p/{{i.order_master_id}}">accept</a></td>
+            {%endif%}
+        </tr>
+        {%endfor%}
+    </table>
+    </center>
+    
+</body>
+</html>

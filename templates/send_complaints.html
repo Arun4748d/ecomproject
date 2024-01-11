@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <link rel="stylesheet" class=".nav-links"  href="static/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-1">
+          
+          </div>
+        <div class="header-2">
+            <ul class="link">
+        
+                <li> <a class="nav-links"  href="user_home">back</a></li>
+         
+               
+                </ul>
+         </div>
+     </div>
+     
+    <form action="" method="post">
+        
+            
+                <center>
+                    <table>
+                <tr>   
+                    <th>complaints</th>
+                
+                
+                    <td><textarea name="complaints" placeholder="...." style="height: 100px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="submit" value="done"></td>
+                </tr>
+                    </table>
+                    </center>
+
+
+                <center>
+                    <h2>reply
+                    </h2>
+                    <table>
+                        <tr>
+                            <th>date</th>
+                            
+                            <th>reply</th>
+                        </tr>
+                        {% for i in n%}
+                        <tr>
+                            <td>{{i.date_time}}</td>
+                            <td>{{i.reply}}</td>
+                        </tr>
+                        {%endfor%}
+
+                    </table>
+                </center>
+            
+        
+    </form>
+    
+</body>
+</html>

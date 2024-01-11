@@ -1,0 +1,34 @@
+{%include 'admin_header.html'%}
+<div class="shps">
+    <center>
+        <br><br><br><br><br><br><br>
+        <table >
+            <tr>
+                <th>shop name</th>
+                <th>place</th>
+                <th>landmark</th>
+                <th>phone</th>
+                <th>email</th>
+                <th>status</th>
+            </tr>
+            {% for i in q %}
+            <tr>
+                <td>{{i.shopname}}</td>
+                <td>{{i.place}}</td>
+                <td>{{i.landmark}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.status}}</td>
+                <td><a href="accept_usertype/{{i.login_id}}">Accept</a></td>
+                <td><a href="reject_usertype/{{i.id}}"><input type="submit" value="reject" name="submit"></a></td>
+                
+                
+            </tr>
+            {%endfor%}
+        </table>
+    </center>
+</div>
+ 
+    
+</body>
+</html>

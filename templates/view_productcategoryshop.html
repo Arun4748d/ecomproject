@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <form action="" method="post" enctype="multipart/form-data">
+    <center>
+        {%if j%}
+        <table>
+            <tr>
+                <th>Category</th>
+                <td>
+                    <select name="catename" id="" value="{{j.category}}">
+                        {% for i in catview %}
+                        <option value="{{i.id}}">{{i.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Product Name</th>
+                <td><input type="text" name="proname" value="{{j.product_name}}"></td>
+            </tr>
+            <tr>
+                <th>details</th>
+                <td><input type="text" name="details" value="{{j.details}}"></td>
+            </tr>
+            <tr>
+                <th>price</th>
+                <td><input type="text" name="price" value="{{j.price}}"></td>
+            </tr>
+            <tr>
+                <th>image</th>
+                <td><input type="file" name="imagexxx" value="{{j.image}}"></td>
+            </tr>
+            <tr>
+                <th>quantity</th>
+                <td><input type="text" name="quantity" value="{{j.stocks}}"></td>
+            </tr>
+            <tr>
+               
+                <td><input type="submit" name="submit" value="done"></td>
+            </tr>
+        </table>
+        </form>
+        {%else%}
+        <form action="" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Category</th>
+                <td>
+                    <select name="catename" id="product">
+                        {% for i in catview %}
+                        <option value="{{i.id}}">{{i.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Product Name</th>
+                <td><input type="text" name="proname"></td>
+            </tr>
+            <tr>
+                <th>details</th>
+                <td><input type="text" name="details"></td>
+            </tr>
+            <tr>
+                <th>price</th>
+                <td><input type="text" name="price"></td>
+            </tr>
+            <tr>
+                <th>image</th>
+                <td><input type="file" name="imagexxx"></td>
+            </tr>
+            <tr>
+                <th>quantity</th>
+                <td><input type="text" name="quantity"></td>
+            </tr>
+            <tr>
+               
+                <td><input type="submit" name="submit" value="done"></td>
+            </tr>
+        </table>
+        {%endif%}
+        </form>
+        <form action="" method="post"></form>
+
+        
+        <table>
+            <h2>manage products</h2>
+            <tr>
+                <th>no</th>
+                <th> name</th>
+                <th>product_details</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>image</th>
+            </tr>
+            {% for i in man %}
+             <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.product_name}}</td>
+                <td>{{i.details}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.stocks}}</td>
+                <td><img src="static/{{i.image}}" width="50px" height="50px"></td>
+                <td><a href="update_cat/{{i.id}}">update</a></td>
+                <td><a href="delete_cat/{{i.id}}">delete</a></td>
+             </tr>
+            {% endfor %}
+        </table>  
+        
+    </center>
+    </form>
+    
+    
+</body>
+</html>

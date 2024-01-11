@@ -1,0 +1,68 @@
+{%include 'userheader.html'%}
+    <center>
+    <table>
+  <tr>
+    <th></th>
+    <th>product</th>
+    <th>quantity</th>
+    <th>date</th>
+    <th>amount</th>
+    <th>status</th>
+    <th></th>
+
+  </tr>
+  {%for i in c%}
+  <tr>
+    <td><img src="static/{{i.product.image}}" width="50px" height="50px"></td>
+    <td>{{i.product.product_name}}</td>
+    <th>{{i.quantity}}</th>
+    <td>{{i.order_master.date_time}}</td>
+  
+    <td>{{i.amount}}</td>
+    <td>{{i.order_master.status}}</td>
+    
+    {% if i.order_master.status == "delivered" %}
+    <td><a href="rate_product/{{i.id}}/{{i.product_id}}"><input class="button2" type="submit" name="submit" value="rate product"></a></td>
+    {%endif%}
+    
+  
+ 
+  </tr>
+  
+  {%endfor%}
+  </table>
+
+ 
+  <table>
+    {%for i in d%}
+    {% if i.status == "pending" %}
+    <tr>
+   
+      <th>total:</th>
+      <td>{{i.total}}</td>
+
+
+      <td><a href="payment/{{i.id}}/{{i.total}}"><input class="button2" type="submit" name="submit" value="pay"></a></td>
+      {%endif%}
+    </tr>
+    {%endfor%}
+
+  </table>
+  </center>
+  <style>
+    .button2{
+      padding: 7px;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 15px;
+      cursor: pointer;
+      background-color: rgb(62, 82, 98);
+      border: none;
+      border-radius: 15px;
+      color: azure;
+      
+  }
+
+  </style>
+</body>
+</html>

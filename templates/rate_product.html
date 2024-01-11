@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <table>
+        <form action="" method="POST">
+            <tr>
+            
+            <th>rate</th>
+        
+            <th>review</th>
+            </tr>
+            
+            <tr>
+                
+                <td><div class="star-rating">
+                    <input type="radio" name="rating" id="star5" value="5"><label for="star5"></label>
+                    <input type="radio" name="rating" id="star4" value="4"><label for="star4"></label>
+                    <input type="radio" name="rating" id="star3" value="3"><label for="star3"></label>
+                    <input type="radio" name="rating" id="star2" value="2"><label for="star2"></label>
+                    <input type="radio" name="rating" id="star1" value="1"><label for="star1"></label>
+                  </div></td>
+              
+               <td><textarea name="review" placeholder="...." style="height:50px"></textarea></td>
+               <td><input type="submit" name="submit" value="done"></td>
+               
+
+            </tr>
+            
+        </form>
+        </table>
+    </center>
+    <style>
+        .star-rating {
+            display: inline-block;
+          }
+          
+          .star-rating input[type="radio"] {
+            display: none;
+          }
+          
+          .star-rating label {
+            font-size: 30px;
+            color: gray;
+            cursor: pointer;
+          }
+          
+          .star-rating label:before {
+            content: '\2605'; /* Unicode character for a star */
+          }
+          
+          .star-rating input[type="radio"]:checked ~ label {
+            color: gold;
+          }
+      </style>
+      <script>
+        const stars = document.querySelectorAll('.star-rating input[type="radio"]');
+
+stars.forEach(star => {
+  star.addEventListener('change', () => {
+    stars.forEach(s => {
+      if (s !== star) {
+        s.checked = false;
+      }
+    });
+  });
+});
+
+
+      </script>
+
+    
+</body>
+</html>
